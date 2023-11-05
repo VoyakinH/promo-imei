@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  app:
+    image: promo-code-app
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: promo-code-app
+    ports: 
+      - "80:80"
+    volumes:
+      - local-db:/usr/src/app/db
+
+volumes:
+  local-db:
